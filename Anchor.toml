@@ -1,0 +1,10 @@
+
+[programs.devnet]
+lunaro_presale = "YourDevnetProgramIDHere"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo test-bpf"
