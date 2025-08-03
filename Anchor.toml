@@ -1,10 +1,29 @@
 
-[programs.devnet]
-lunaro_presale = "YourDevnetProgramIDHere"
+[package]
+name = "lunaro_presale"
+version = "0.1.0"
+description = "Presale smart contract for Lunaro"
+authors = ["seu_nome <seu@email.com>"]
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+anchor-lang = "0.29.0"
+anchor-spl = "0.29.0"
+
+[features]
+default = []
+
+[programs.localnet]
+lunaro_presale = "83aR3eb4LmGtTckRhQXqU8K2MAKHRQsuqHS25w1BE4HK"
 
 [provider]
-cluster = "devnet"
-wallet = "~/.config/solana/id.json"
+cluster = "localnet"
+wallet = "./target-keypair.json"
 
 [scripts]
-test = "cargo test-bpf"
+test = "mocha"
+ 
+[profile.release]
+overflow-checks = true
